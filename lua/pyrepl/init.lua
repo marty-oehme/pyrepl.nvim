@@ -90,6 +90,10 @@ function M.step_cell_backward()
     send.step_cell_backward(0)
 end
 
+function M.is_repl_running()
+    return core.get_chan()
+end
+
 ---@param opts? pyrepl.ConfigOpts
 ---@return table
 function M.setup(opts)
