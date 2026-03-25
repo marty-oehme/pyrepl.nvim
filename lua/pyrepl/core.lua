@@ -203,6 +203,15 @@ function M.hide_repl()
     end
 end
 
+---Toggle open or closed REPL window.
+function M.toggle_repl()
+    if state and state.win and vim.api.nvim_win_is_valid(state.win) then
+        M.hide_repl()
+    else
+        M.open_repl()
+    end
+end
+
 ---Close session completely:
 ---1) Close window;
 ---2) Terminate console process;

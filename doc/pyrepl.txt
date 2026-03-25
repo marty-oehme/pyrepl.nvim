@@ -48,6 +48,7 @@ Minimal lazy.nvim setup with the default config and example keymaps:
       -- main commands
       vim.keymap.set("n", "<leader>jo", pyrepl.open_repl)
       vim.keymap.set("n", "<leader>jh", pyrepl.hide_repl)
+      vim.keymap.set("n", "<leader>jt", pyrepl.toggle_repl)
       vim.keymap.set("n", "<leader>jc", pyrepl.close_repl)
       vim.keymap.set("n", "<leader>ji", pyrepl.open_image_history)
       vim.keymap.set({ "n", "t" }, "<C-j>", pyrepl.toggle_repl_focus)
@@ -106,6 +107,9 @@ COMMANDS                                                        *pyrepl-commands
 :PyreplHide                                                     *PyreplHide*
     Hide the REPL window. Keeps the REPL buffer and kernel alive.
 
+:PyreplToggle                                                   *PyreplToggle*
+    Toggle REPL between hidden and opened.
+
 :PyreplClose                                                    *PyreplClose*
     Close the REPL and shut down the kernel.
 
@@ -157,6 +161,9 @@ require("pyrepl").open_repl()                                   *pyrepl.open_rep
 
 require("pyrepl").hide_repl()                                   *pyrepl.hide_repl*
     Same as |PyreplHide|. Hides the REPL window.
+
+require("pyrepl").toggle_repl()                                 *pyrepl.toggle_repl*
+    Same as |PyreplToggle|. Toggles the REPL window.
 
 require("pyrepl").close_repl()                                  *pyrepl.close_repl*
     Same as |PyreplClose|. Closes the REPL and shuts down the kernel.
